@@ -1,0 +1,40 @@
+{% extends 'system/base.html' %}
+{% block content %}
+
+
+<div class="container card">
+  <table class="table">
+    <tr>
+      <th>Art</th>
+      <th>Beschreibung</<th></th>
+      <th>Preis</th>
+      <th>Datum</th>
+      <th>Status</th>
+      <th>PDF</th>
+    </tr>
+    {% for i in eingangsrechnungen %}
+    <tr>
+      <td>{{ i.art }}</td>
+      <td>{{ i.beschreibung }}</td>
+      <td>{{ i.preis }}€</td>
+      <td>{{ i.datum.date }}</td>
+      <td>{{ i.status }}</td>
+      <td><a href="{% url 'alle_kreditoren'  %}"><button class="btn-sm btn-dark">Download</button></a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td><a class="btn btn-dark" href="{% url 'kreditor_neue_eingangsrechnung' id %}">Neue Eingangsrechnung</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  </table>
+</div>
+<br>
+
+
+
+{% endblock content %}

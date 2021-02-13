@@ -1,0 +1,25 @@
+{% extends 'system/base.html' %}
+{% block content %}
+
+<div class="container card">
+  <table class="table">
+    <tr>
+      <th>Art</th>
+      <th>Beschreibung</<th></th>
+      <th>Preis</th>
+      <th>Datum</th>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>{{ alle_kunden.art }}</td>
+      <td>{{ alle_kunden.beschreibung }}</td>
+      <td>{{ alle_kunden.preis }}</td>
+      <td>{{ alle_kunden.datum.date }}</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends 'system/base.html' %}
+{% block content %}
+
+<div class="container card">
+  <table class="table">
+    <tr>
+      <th>Kreditorennummer</th>
+      <th>Firmenname</<th>
+      <th>Straße</th>
+      <th>PLZ</th>
+      <th>Ort</th>
+      <th>Bearbeiten</th>
+      <th>Rechnungen</th>
+    </tr>
+    {% for i in alle_kreditoren %}
+    <tr>
+      <td>{{ i.id }}</td>
+      <td>{{ i.firma }}</td>
+      <td>{{ i.strasse }} {{ i.hausnummer }}</td>
+      <td>{{ i.plz }}</td>
+      <td>{{ i.ort }}</td>
+      <td><a href="{% url 'bearbeiten_kreditor' i.id %}"><button class="btn-sm btn-dark">Bearbeiten</button></a></td>
+      <td><a href="{% url 'kreditor_eingangsrechnung' i.id %}"><button class="btn-sm btn-outline-dark">Eingangsrechnungen</button></a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a class="btn btn-dark" href="{% url 'neuer_kreditor' %}">Neuer Kreditor</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+<br>
+
+
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/icon.png' %}" height="39px" width="39px" align="center" alt="Selfhtml"></a>
+    <div style="border-radius: 3px; background-color:white; margin-left:20px; color: black; font-size:23px; width:320px; text-align:center;" class"navbar-nav">{{ title }}</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li style="padding-left:20px;" class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle mx-2 text-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Debitoren
+          </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item" href="{% url 'alle_debitoren' %}">Alle Debitoren</a></li>
+          <li><a class="dropdown-item" href="{% url 'neuer_debitor' %}">Neuer Debitor</a></li>
+        </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link active dropdown-toggle text-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ausgangsrechnungen
+          </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item" href="{% url 'alle_ausgangsrechnungen' %}">Alle Ausgangsrechnungen</a></li>
+          <li><a class="dropdown-item" href="{% url 'neue_ausgangsrechnung' %}">Neue Ausgangsrechnung</a></li>
+        </ul>
+        </li>
+
+
+        <li style="padding-left:20px;" class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle text-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kreditoren
+          </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item" href="{% url 'alle_kreditoren' %}">Alle Kreditoren</a></li>
+          <li><a class="dropdown-item" href="{% url 'neuer_kreditor' %}">Neuer Kreditor</a></li>
+        </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link active dropdown-toggle mx-2 text-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Eingangsrechnungen
+          </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item" href="{% url 'alle_eingangsrechnungen' %}">Alle Eingangsrechnungen</a></li>
+          <li><a class="dropdown-item" href="{% url 'neue_eingangsrechnung' %}">Neue Eingangsrechnung</a></li>
+        </ul>
+        </li>
+
+
+      </ul>
+  </div>
+
+
+
+</nav>

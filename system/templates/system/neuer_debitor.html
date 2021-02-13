@@ -1,0 +1,46 @@
+{% extends 'system/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container card">
+<form action="" method="POST">
+  {% csrf_token %}
+  <legend class="border-bottom mb-3 font-weight-bold"><b>Neuer Debitor</b></legend>
+
+  <div class="row">
+    <div class="form-group col-md-6 mb-2">
+      {{ debitor_form.name|as_crispy_field }}
+    </div>
+    <div class="form-group col-md-6 mb-2 ">
+      {{ debitor_form.vorname|as_crispy_field }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-10 mb-2">
+      {{ debitor_form.strasse|as_crispy_field }}
+    </div>
+    <div class="form-group col-md-2 mb-2 ">
+      {{ debitor_form.hausnummer|as_crispy_field }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6 mb-2">
+      {{ debitor_form.plz|as_crispy_field }}
+    </div>
+    <div class="form-group col-md-6 mb-2 ">
+      {{ debitor_form.ort|as_crispy_field }}
+    </div>
+    </div>
+
+      <br>
+
+      <input class="btn btn-dark" type="submit" name="Submit" value="Speichern">
+
+</form>
+<br>
+</div>
+
+
+
+
+{% endblock content %}

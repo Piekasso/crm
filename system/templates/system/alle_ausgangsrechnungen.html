@@ -1,0 +1,93 @@
+{% extends 'system/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="container card">
+  <div class="card-body text-center">
+			<form method="get">
+        <div class="row">
+          <div class="form-group col-md-2 mb-2">
+            {{ myFilter.form.debitor|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-2 mb-2 ">
+            {{ myFilter.form.art|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-2 mb-2 ">
+            {{ myFilter.form.beschreibung|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-1 mb-2">
+            {{ myFilter.form.preis|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-2 mb-2 ">
+            {{ myFilter.form.status|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-2 mb-2 ">
+            {{ myFilter.form.datum|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-1 mb-2 ">
+            <button class="btn btn-dark mt-4" type="submit">Suche</button>
+          </div>
+        </div>
+		  </form>
+    </div>
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+<div class="container card">
+  <table class="table">
+    <tr>
+      <th>Rechnungsnummer</th>
+      <th>Debitor</th>
+      <th>Art</th>
+      <th>Beschreibung</<th>
+      <th>Preis</th>
+      <th>Datum</th>
+      <th>Status</th>
+      <th>PDF</th>
+    </tr>
+    {% for i in ausgangsrechnungen %}
+    <tr>
+      <td>{{ i.id }}</td>
+      <td>{{ i.debitor }}</td>
+      <td>{{ i.art }}</td>
+      <td>{{ i.beschreibung }}</td>
+      <td>{{ i.preis }}€</td>
+      <td>{{ i.datum.date }}</td>
+      <td>{{ i.status }}</td>
+      <td><a href="{% url 'alle_debitoren'  %}"><button class="btn-sm btn-outline-dark">Download</button></a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a class="btn btn-dark" href="{% url 'neue_ausgangsrechnung' %}">Neue Ausgangsrechnung</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+<br>
+
+
+{% endblock content %}

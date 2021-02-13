@@ -1,0 +1,54 @@
+{% extends 'system/base.html' %}
+{% block content %}
+
+<br>
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Debitoren</h5>
+        <p class="card-text">Kunden sind das wichtigste fürs Unternehmen.</p>
+        <a href="{% url 'alle_debitoren' %}" class="btn btn-dark">Debitoren anlegen</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Kreditoren</h5>
+        <p class="card-text">Ohne Zulieferer kann man auch nichts verkaufen.</p>
+        <a href="{% url 'alle_kreditoren' %}" class="btn btn-dark">Kreditoren anlegen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ausgangsrechnungen</h5>
+        <p class="card-text">Diese Rechnungen schreibt man doch sehr gerne.</p>
+        <a href="{% url 'alle_ausgangsrechnungen' %}" class="btn btn-dark">Ausgangsrechnungen anlegen</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Eingangsrechnungen</h5>
+        <p class="card-text">Hierrüber sollte man nie den Überblick verlieren.</p>
+        <a href="{% url 'alle_eingangsrechnungen' %}" class="btn btn-dark">Eingangsrechnungen anlegen</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    CRM - System for Everyone
+  </title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/icon.png' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: 'Roboto', serif;
+        height: 100%;
+        margin: 0;
+        background-image: url({% static 'images/hinter.png' %});
+      }
+    </style>
+</head>
+<body>
+  {% include 'system/navbar.html' %}
+  <br>
+  {% block content %}
+
+  {% endblock content %}
+  {% include 'system/footer.html' %}
+</body>
+</html>
